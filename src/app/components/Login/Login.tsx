@@ -50,7 +50,7 @@ export const Login = () => {
                             onChange={e => ({ ...login, password: e.target.value })} />
                     </form>
 
-                    <div className="flex xl:ml-10 xl:mt-1">
+                    <div className="flex xl:ml-10 2xl:ml-20 xl:mt-1">
                         <p className="text-sm text-cinza">Esqueceu sua Senha? <a href="/" className="text-amarelo">Clique aqui</a></p>
                     </div>
 
