@@ -26,6 +26,7 @@ export const Login = () => {
                     alt="Logo"
                     width={82}
                     height={82}
+                    className="sm:w-20 sm:h-20 sm:mt-10"
                 />
                 <h1 className="text-2xl font-extrabold">Login</h1>
             </div>
@@ -63,7 +64,7 @@ export const Login = () => {
                         <p className="font-semibold text-black text-base">Entrar com Google</p>
                     </a>
                 </div>
-                <div className="bg-gray-200/50 w-80 sm:w-[360px] md:w-[500px] rounded-3xl p-2">
+                <div className="bg-gray-200/50 w-80 sm:w-[360px] sm:mb-5 md:w-[500px] rounded-3xl p-2">
                     <a href="/" className="flex justify-center items-center gap-2">
                         <Image
                             src="/assets/apple.svg"
