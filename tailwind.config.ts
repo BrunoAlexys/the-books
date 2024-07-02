@@ -8,6 +8,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        cinza: {
+          DEFAULT: '#999999',
+          opaco: 'rgba(153, 153, 153, 0.35)',
+        },
+        amarelo: '#FFC800',
+        background: '#FBF6E6',
+      },
+
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
