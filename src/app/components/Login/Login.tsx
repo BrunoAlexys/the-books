@@ -3,98 +3,61 @@
 import Image from "next/image";
 import { Input } from "../Input/Input";
 import { Button } from "../Button/Button";
-import { FormEvent, useState } from "react";
-import { LoginType } from "@/app/Types/LoginType";
-
 
 export const Login = () => {
-
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-
-    const [login, setLogin] = useState<LoginType>({ email: '', password: '' });
-
-    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-    }
-
     return (
-        <div className="h-screen flex flex-col xl:flex-row justify-around items-center">
-
-            <div className="xl:flex xl:flex-col xl:flex-1">
-
-                <div className="flex flex-col flex-1 justify-center items-center gap-2">
+        <div className="xl:h-screen flex flex-col xl:flex-row justify-center items-center gap-2 xl:gap-20">
+            <div className="mb-10">
+                <div className="flex flex-col justify-center items-center gap-4 xl:mb-4 mt-12 xl:mt-5">
                     <Image
                         src="/assets/logo.svg"
                         alt="Logo"
-                        width={82}
-                        height={82}
-                        className="sm:w-20 sm:h-20 sm:mt-10 xl:mt-0"
+                        width={84}
+                        height={84}
                     />
-                    <h1 className="text-2xl font-extrabold">Login</h1>
+                    <h1 className="text-3xl xl:text-[40px] font-extrabold">Login</h1>
                 </div>
-
-                <div className="flex flex-col flex-1">
-                    <form onClick={handleSubmit} className="flex flex-col items-center">
-                        <Input
-                            label="E-mail"
-                            placeholder="Digite seu e-mail"
-                            type="email"
-                            value={email}
-                            onChange={e => setLogin({ ...login, email: e.target.value })} />
-                        <Input
-                            label="Senha"
-                            placeholder="Digite sua senha"
-                            type="password"
-                            value={password}
-                            onChange={e => ({ ...login, password: e.target.value })} />
-                    </form>
-
-                    <div className="flex xl:ml-10 2xl:ml-20 xl:mt-1">
-                        <p className="text-sm text-cinza">Esqueceu sua Senha? <a href="/" className="text-amarelo">Clique aqui</a></p>
+                <div>
+                    <Input
+                        type="email"
+                        placeholder="Digite seu email"
+                        label="Email"
+                        className="outline-none" />
+                    <Input
+                        type="password"
+                        placeholder="Digite sua senha"
+                        label="Senha" 
+                        className="outline-none" />
+                    <p className="ml-4 mt-2 text-[#999999]">Esqueceu sua Senha?<a className="text-amarelo"> Clique aqui</a></p>
+                    <div className="flex justify-center mt-16">
+                        <Button>Entrar</Button>
                     </div>
-
-                    <div className="flex flex-col flex-1 items-center mt-10">
-                        <div className="mb-7"><Button>Login</Button></div>
-                        <div className="border-b-2 border-gray-200/50 w-[355px] sm:w-[440px] md:w-[600px] xl:hidden"></div>
-                    </div>
-
                 </div>
-
             </div>
 
-            <div className="xl:border-2 xl:border-black-200/50 xl:h-[80%]"></div>
+            <div className="border-2 border-[#D9D9D959] w-[355px] sm:w-[650px] xl:w-0 xl:h-[70%]"></div>
 
-            <div className="flex flex-col flex-1 items-center gap-3 xl:flex-1">
-
-                <p className="p-2 text-black text-sm font-semibold">Ou faça login com:</p>
-
-                <div className="bg-gray-200/50 w-80 sm:w-[360px] md:w-[500px] rounded-3xl p-2">
-                    <a href="/" className="flex justify-center items-center gap-2">
-                        <Image
-                            src="/assets/google.svg"
-                            alt="Logo do Google"
-                            width={24}
-                            height={24}
-                        />
-                        <p className="font-semibold text-black text-base">Entrar com Google</p>
-                    </a>
+            <div className="flex flex-col gap-4 justify-center items-center sm:mb-4">
+                <h2 className="text-sm font-semibold p-2">Ou faça login com:</h2>
+                <div className="p-2 w-[342px] sm:w-[500px] xl:w-[575px] xl:p-3 bg-[#D9D9D959] flex justify-center items-center gap-2 rounded-3xl">
+                    <Image
+                        src="/assets/google.svg"
+                        alt="Logo da Google"
+                        width={24}
+                        height={24}
+                    />
+                    <h3 className="text-sm font-semibold"><a className="cursor-pointer">Entrar com Google</a></h3>
                 </div>
-
-                <div className="bg-gray-200/50 w-80 sm:w-[360px] sm:mb-5 md:w-[500px] rounded-3xl p-2">
-                    <a href="/" className="flex justify-center items-center gap-2">
-                        <Image
-                            src="/assets/apple.svg"
-                            alt="Logo da Apple"
-                            width={24}
-                            height={24}
-                        />
-                        <p className="font-semibold text-black text-base">Entrar com Apple</p>
-                    </a>
+                <div className="p-2 w-[342px] sm:w-[500px] xl:w-[575px] xl:p-3 bg-[#D9D9D959] flex justify-center items-center gap-2 rounded-3xl">
+                    <Image
+                        src="/assets/apple.svg"
+                        alt="Logo da Apple"
+                        width={24}
+                        height={24}
+                    />
+                    <h3 className="text-sm font-semibold"><a className="cursor-pointer">Entrar com Apple</a></h3>
                 </div>
-
             </div>
-
         </div>
     );
 }
